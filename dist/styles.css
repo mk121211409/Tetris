@@ -69,6 +69,7 @@ canvas { display: block; }
 .controls-list span { margin-left: auto; }
 kbd { min-width: 25px; min-height: 24px; padding: 3px 6px; display: inline-grid; place-items: center; color: var(--text); background: #1a1d26; border: 1px solid #383c49; border-bottom-width: 3px; border-radius: 4px; font-size: .68rem; }
 .touch-controls { display: none; }
+.demo-note { margin: 26px 0 0; color: var(--muted); text-align: center; font-size: .82rem; letter-spacing: .015em; }
 
 @media (max-width: 780px) {
   .game-shell { padding: 18px 14px 24px; }
