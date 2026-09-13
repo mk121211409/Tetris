@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0b10" />
+    <meta name="description" content="A fast, focused browser Tetris game." />
+    <title>Stackline</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="#game" aria-label="Stackline home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>STACKLINE</span>
+        </a>
+        <button class="icon-button" id="pauseButton" type="button" aria-label="Pause game" title="Pause game (P)">
+          <span class="pause-icon" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <section class="game-layout" id="game" aria-label="Tetris game">
+        <aside class="score-panel panel" aria-label="Game statistics">
+          <p class="eyebrow">Score</p>
+          <p class="score" id="score">000000</p>
+          <div class="stat-row"><span>Lines</span><strong id="lines">0</strong></div>
+          <div class="stat-row"><span>Level</span><strong id="level">1</strong></div>
+        </aside>
+
+        <div class="board-wrap">
+          <div class="board-frame">
+            <canvas id="board" width="300" height="600" aria-label="Tetris playfield" role="img"></canvas>
+            <div class="game-overlay" id="overlay">
+              <p class="overlay-label">Ready?</p>
+              <h1>STACK<br />THE LINE</h1>
+              <button class="primary-button" id="startButton" type="button">Start game</button>
+              <p>Arrow keys to move · Space to drop</p>
+            </div>
+          </div>
+          <p class="status" id="status" aria-live="polite">Press Start game to begin.</p>
+        </div>
+
+        <aside class="next-panel panel">
+          <p class="eyebrow">Next</p>
+          <canvas id="next" width="120" height="100" aria-label="Next piece preview"></canvas>
+          <div class="controls-list" aria-label="Keyboard controls">
+            <div><kbd>←</kbd><kbd>→</kbd><span>Move</span></div>
+            <div><kbd>↑</kbd><span>Rotate</span></div>
+            <div><kbd>↓</kbd><span>Soft drop</span></div>
+            <div><kbd>Space</kbd><span>Hard drop</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="touch-controls" aria-label="Touch controls">
+        <button type="button" data-action="left" aria-label="Move left">←</button>
+        <button type="button" data-action="rotate" aria-label="Rotate">↻</button>
+        <button type="button" data-action="right" aria-label="Move right">→</button>
+        <button type="button" data-action="down" aria-label="Soft drop">↓</button>
+        <button class="drop-button" type="button" data-action="drop" aria-label="Hard drop">DROP</button>
+      </section>
+    </main>
+    <script src="./game.js"></script>
+  </body>
+</html>
